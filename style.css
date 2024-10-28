@@ -1,0 +1,221 @@
+* Basic CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple: #AF80BA;
+    --dark-purple: #613E69;
+    --light-purple: #C6B2D9;
+}
+
+/* Set background image for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    background-image: url("images/bg2.jpg"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--light-purple);
+    color: #fff;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: var(--purple);
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+}
+
+.nav-links a:hover {
+    background-color: var(--dark-purple);
+}
+
+.navbar .login-btn {
+    padding: 8px 16px;
+    background-color: var(--purple);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+}
+
+.navbar .login-btn:hover {
+    background-color: var(--dark-purple);
+}
+
+/* Main container for the homepage */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%; /* Full width for main container */
+}
+
+.info-container {
+    width: 80%;
+    padding: 30px;
+    margin-top: 10px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    /* box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.38); */
+    text-align: center;
+}
+
+.info-container h1 {
+    font-size: 40px;
+    color: var(--dark-purple);
+}
+
+.info-container h3 {
+    font-size: 20px;
+    color: var(--purple);
+    margin-top: 10px;
+}
+
+.info-container p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+/* Books container styling */
+.books-container {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--light-purple);
+    border-radius: 1px;
+    /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
+    color: #333;
+    height: auto;
+    min-width: 250px;
+    height: 60vh;
+}
+
+.books-container h2 {
+    font-size: 24px;
+    color: var(--dark-purple);
+    margin-bottom: 15px;
+}
+
+.books-container ul {
+    list-style-type: none;
+}
+
+.books-container li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .books-container, .info-container {
+        width: 90%;
+    }
+}
+/* sliding */
+/* Book Slider Styling */
+.book-slider {
+    width: 30%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.book-slider h2 {
+    font-size: 24px;                            
+    color: var(--dark-purple);
+    margin-bottom: 20px;
+}
+
+.slider {
+    display:flex;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.603);
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+    position: relative;
+    padding: 10px;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+.slide img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 20%);
+    margin-bottom: 10px;
+}
+
+.slide p {
+    font-size: 18px;
+    color: var(--purple);
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+.slider {
+    animation: slide 15s infinite;
+}
+
+
