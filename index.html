@@ -25,44 +25,50 @@
         <a href="login.html"><button class="login-btn">Login / Sign In</button></a>
     </nav>
 
-    <!-- Main content containers -->
+    <!-- Main content containers (info and slider) -->
     <div class="main-container">
         <!-- First container with website info -->
-
         <div class="info-container">
-            <h1>Atheneum</h1>
+            <h1 class="logo_name">Atheneum</h1>
             <h3>where every story begins</h3>
             <p>This is a short paragraph about the website, describing its mission, goals, or the types of books it offers. It provides an introduction to visitors, enticing them to explore more about the content available.</p>
         </div>
-        
+
         <!-- Book Slider Section -->
         <div class="book-slider">
-            <h2>Famous Books</h2>
-            <div class="slider">
-                <div class="slide">
-                    <a href="BOOKS/Fictional/The Alchemist by Paulo Coelho ( PDFDrive.com ).pdf"><img src="images/Alchemist.jpeg" alt="Book 1">
-                    <p>Book Title 1</p>
+            <h2 class="famous_books">Famous Books</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <a href="BOOKS/Fictional/The Alchemist by Paulo Coelho ( PDFDrive.com ).pdf">
+                            <img src="images/Alchemist.jpeg" alt="Book 1">
+                            <p>Book Title 1</p>
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <img src="images/the-pilgrimage.jpg" alt="Book 2">
+                        <p>Book Title 2</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/Brida.jpeg" alt="Book 3">
+                        <p>Book Title 3</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/Brida.jpeg" alt="Book 3">
+                        <p>Book Title 3</p>
+                    </div>
+                    <div class="slide">
+                        <img src="images/Brida.jpeg" alt="Book 3">
+                        <p>Book Title 3</p>
+                    </div>
                 </div>
-                <div class="slide">
-                    <img src="images/the-pilgrimage.jpg" alt="Book 2">
-                    <p>Book Title 2</p>
-                </div>
-                <div class="slide">
-                    <img src="images/famous-book3.jpg" alt="Book 3">
-                    <p>Book Title 3</p>
-                </div>
-                
-                <!-- Add more slides as needed -->
             </div>
+            <!-- <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button> -->
         </div>
-        
-        
-
-        <!-- Second container with trending books -->
-        <!-- <div class="books-container">
-            <h2>Trending Books of the Day</h2>
-            <ul id="trending-books">
-            </ul>
-        </div> -->
     </div>
+
+    <script src="slider.js"></script>
 </div>
+</body>
+</html>

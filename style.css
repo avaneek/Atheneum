@@ -1,4 +1,4 @@
-* Basic CSS reset */
+/* Basic CSS reset */
 * {
     margin: 0;
     padding: 0;
@@ -18,12 +18,13 @@ body {
     margin: 0;
 }
 
-.main{
-    background-image: url("images/bg2.jpg"); /* Replace with your image path */
+.main {
+    background-image: url("images/whiteHomeTexture.jpg"); /* Replace with your image path */
     background-size: cover;
     background-position: center;
-    height: 100%;
+    height: 100vh; /* Full viewport height */
 }
+
 /* Navbar styling */
 .navbar {
     display: flex;
@@ -79,26 +80,35 @@ body {
 /* Main container for the homepage */
 .main-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    width: 100%; /* Full width for main container */
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between;
+    align-items: center; /* Align items vertically to the center */
+    height: calc(100vh - 100px); /* Adjust height minus navbar height */
+    padding: 0 20px; /* Some padding for spacing */
 }
 
+/* Adjusting info container for horizontal layout */
 .info-container {
-    width: 80%;
+    width: 48%; /* Adjust width to take up about half the space */
+    height: 60vh; /* Set height to 60% of the viewport */
     padding: 30px;
-    margin-top: 10px;
     color: #333;
-    background: rgba(255, 255, 255, 0.8);
+    /* background: rgba(255, 255, 255, 0.8); */
     border-radius: 8px;
-    /* box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.38); */
-    text-align: center;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Center horizontally for consistency */
+    margin-top: 60px;
+}
+
+.logo_name{
+    margin-bottom: 30px;
 }
 
 .info-container h1 {
-    font-size: 40px;
+    font-size: 80px;
     color: var(--dark-purple);
 }
 
@@ -113,81 +123,48 @@ body {
     color: #555;
     line-height: 1.5;
     margin-top: 15px;
+    max-width: 80%; /* Limit the width of text for better readability */
 }
 
-/* Books container styling */
-.books-container {
-    flex: 1;
-    padding: 20px;
-    background-color: var(--light-purple);
-    border-radius: 1px;
-    /* box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%); */
-    color: #333;
-    height: auto;
-    min-width: 250px;
-    height: 60vh;
-}
-
-.books-container h2 {
-    font-size: 24px;
-    color: var(--dark-purple);
-    margin-bottom: 15px;
-}
-
-.books-container ul {
-    list-style-type: none;
-}
-
-.books-container li {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .books-container, .info-container {
-        width: 90%;
-    }
-}
-/* sliding */
 /* Book Slider Styling */
 .book-slider {
-    width: 30%;
-    margin: 30px auto;
+    width: 38%; /* Adjust width to take up about half the space */
+    height: 60vh; /* Set height to 60% of the viewport */
+    /* margin: 0; Remove margin to align with the info container */
     text-align: center;
+    position: relative;
+    margin-right: 80px;
 }
 
-.book-slider h2 {
-    font-size: 24px;                            
-    color: var(--dark-purple);
+.famous_books{
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.slider {
-    display:flex;
+.slider-container {
     overflow: hidden;
     width: 100%;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.603);
+    height: 100%; /* Ensure slider takes up the full height */
+    background-color: #af80ba48;
     box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
-    position: relative;
-    padding: 10px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
 }
 
 .slide {
     min-width: 100%;
-    transition: transform 0.5s ease;
+    flex: 0 0 100%; /* Ensures each slide takes up full container width */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Vertically center each slide content */
     color: #333;
+    height: 100%;
 }
 
 .slide img {
@@ -203,19 +180,47 @@ body {
     color: var(--purple);
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+/* Slider controls */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
-.slider {
-    animation: slide 15s infinite;
+.prev {
+    left: 10px;
 }
 
+.next {
+    right: 10px;
+}
 
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack the containers vertically */
+        justify-content: center; /* Center both containers vertically */
+        align-items: center;
+        height: auto;
+    }
+
+    .info-container, .book-slider {
+        width: 90%; /* Full width for both containers */
+        margin-bottom: 20px; /* Add some spacing between the containers */
+        height: auto; /* Auto height for smaller screens */
+    }
+
+    .slider-container {
+        height: auto; /* Adjust slider height for small screens */
+    }
+}
