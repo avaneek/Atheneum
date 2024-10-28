@@ -1,0 +1,51 @@
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--light-purple);
+    color: #fff;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: var(--purple);
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+}
+
+.navbar .nav-links a:hover {
+    background-color: var(--dark-purple);
+}
+
+.navbar .login-btn {
+    padding: 8px 16px;
+    background-color: var(--purple);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px 2px rgb(0 0 0 / 38%);
+}
+
+.navbar .login-btn:hover {
+    background-color: var(--dark-purple);
+}
